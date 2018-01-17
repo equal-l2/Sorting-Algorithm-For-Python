@@ -21,20 +21,23 @@ def insertion(num):
 def selection(num):
     for i in range(len(num)):
         print(num)
-        min = num[i]
+        min_num = num[i]
+        min_index = i;
         tmp = num[i]
         if i < len(num):
             for j in range(i,len(num)):
-                if min > num[j]:
-                    min = num[j]
-                    num[j] = tmp
-                    num[i] = min
+                if min_num > num[j]:
+                    min_num = num[j]
+                    min_index = j
+            num[min_index] = tmp
+            num[i] = min_num
     return num
+def quick(num):
+    pass
+    
 if __name__ == "__main__":
-    num = [-9.2,2,31,1,-62,5.1,8,7]
+    num = [-9.2,2,31,1,-62,5.1,8,7,1,3,4,2,4,5,5.4,2,1.2,-1,2,3,2,11]
     print("None:"+str(num))
-    print("Bubble:"+str(bubble(num)))
-    num = ["a","g","g","s","v","r","t","e","w"]
-    print("Insertion:"+str(insertion(num)))
-    num = [-9.2,2,31,1,-62,5.1,8,7]
-    print("Selection:"+str(selection(num)))
+    #print("Bubble:"+str(bubble(num)))
+    #print("Insertion:"+str(insertion(num)))
+    #print("Selection:"+str(selection(num)))
