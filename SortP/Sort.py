@@ -32,12 +32,30 @@ def selection(num):
             num[min_index] = tmp
             num[i] = min_num
     return num
+def shaker(num):
+    for i in range(len(num)):
+        print("right")
+        for j in range(i,len(num) - 1):
+            print(num)
+            if num[j] > num[j + 1]:
+                tmp = num[j]
+                num[j] = num[j + 1]
+                num[j + 1] = tmp
+        print("left")
+        for k in reversed(range(i + 1,len(num))):
+            print(num)
+            if num[k] < num[k - 1]:
+                tmp = num[k]
+                num[k] = num[k - 1]
+                num[k - 1] = tmp
+    return num
 def quick(num):
     pass
     
 if __name__ == "__main__":
-    num = [-9.2,2,31,1,-62,5.1,8,7,1,3,4,2,4,5,5.4,2,1.2,-1,2,3,2,11]
+    num = [11,2,-2,1,32,5,7,3,2,5,7,9,5,-2,-32,5,2,1,7,3,4]
     print("None:"+str(num))
     #print("Bubble:"+str(bubble(num)))
     #print("Insertion:"+str(insertion(num)))
     #print("Selection:"+str(selection(num)))
+    print("Shaker:"+str(shaker(num)))
