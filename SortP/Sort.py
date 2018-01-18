@@ -3,9 +3,7 @@ def bubble(num):
         for j in range(i):
             print(num)
             if num[j] > num[j + 1]:
-                tmp = num[j]
-                num[j] = num[j + 1]  
-                num[j + 1] = tmp
+                num[j], num[j + 1] = num[j + 1], num[j]
     return num
 def insertion(num):
     for i in range(1,len(num)):
@@ -38,16 +36,12 @@ def shaker(num):
         for j in range(i,len(num) - 1):
             print(num)
             if num[j] > num[j + 1]:
-                tmp = num[j]
-                num[j] = num[j + 1]
-                num[j + 1] = tmp
+                num[j], num[j + 1] = num[j + 1], num[j];
         print("left")
         for k in reversed(range(i + 1,len(num))):
             print(num)
             if num[k] < num[k - 1]:
-                tmp = num[k]
-                num[k] = num[k - 1]
-                num[k - 1] = tmp
+                num[k], num[k - 1] = num[k - 1], num[k]
     return num
 def quick(num):
     pass
